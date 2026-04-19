@@ -1,5 +1,5 @@
-import { technologies } from '../data/portfolioData';
-import ScrollAnimation from './ScrollAnimation';
+import { technologies } from '../../data/portfolioData';
+import ScrollAnimation from '../ui/ScrollAnimation';
 
 const iconMap = {
   nodejs: (
@@ -26,24 +26,27 @@ const iconMap = {
 
 export default function Technologies() {
   return (
-    <section className="py-20 bg-slate-50 dark:bg-slate-800/50">
+    <section className="py-20 bg-slate-50 dark:bg-black overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation>
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
               Tecnologias
             </h2>
             <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-              Stack principal para desenvolvimento de APIs robustas e sistemas escaláveis
+              Stack principal para desenvolvimento de APIs robustas
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
           {technologies.map((tech, index) => (
-            <ScrollAnimation key={tech.id} delay={index * 100}>
+            <div
+              key={tech.id}
+              className="flex-shrink-0 w-72 snap-center"
+            >
               <div
-                className="group bg-white dark:bg-slate-800 rounded-xl p-6 border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300"
+                className="group bg-white dark:bg-black rounded-xl p-6 border border-slate-200 dark:border-slate-800 hover:border-blue-500 dark:hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 h-full"
               >
                 <div className="w-14 h-14 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform">
                   {iconMap[tech.icon]}
@@ -55,7 +58,7 @@ export default function Technologies() {
                   {tech.description}
                 </p>
               </div>
-            </ScrollAnimation>
+            </div>
           ))}
         </div>
       </div>

@@ -1,20 +1,26 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Technologies from './components/Technologies';
-import Projects from './components/Projects';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Navbar from './components/layout/Navbar';
+import Hero from './components/sections/Hero';
+import About from './components/sections/About';
+import Education from './components/sections/Education';
+import TechnologiesAndSkills from './components/sections/TechnologiesAndSkills';
+import Projects from './components/sections/Projects';
+import Contact from './components/sections/Contact';
+import Footer from './components/layout/Footer';
+import Particles from './components/ui/Particles';
+import BackgroundGradient from './components/ui/BackgroundGradient';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-black transition-colors relative">
+      <Particles />
+      <BackgroundGradient />
       <Navbar />
       <main>
         <Hero />
-        <Technologies />
-        <Projects />
         <About />
+        <Education />
+        <TechnologiesAndSkills />
+        <Projects />
         <Contact />
       </main>
       <Footer />

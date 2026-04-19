@@ -1,5 +1,5 @@
-import { projects } from '../data/portfolioData';
-import ScrollAnimation from './ScrollAnimation';
+import { projects } from '../../data/portfolioData';
+import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Projects() {
   return (
@@ -20,11 +20,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <ScrollAnimation key={project.id} delay={index * 150}>
               <div
-                className="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:shadow-slate-900/10 transition-all duration-300 hover:-translate-y-1"
+                className="group h-full flex flex-col bg-white dark:bg-black rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl hover:shadow-slate-900/10 transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="h-3 bg-gradient-to-r from-blue-600 to-blue-400 group-hover:h-4 transition-all"></div>
               
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.name}
                 </h3>
@@ -33,11 +33,11 @@ export default function Projects() {
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full"
+                      className="px-3 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full"
                     >
                       {tech}
                     </span>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { navLinks } from '../data/portfolioData';
-import ThemeToggle from './ThemeToggle';
+import { navLinks } from '../../data/portfolioData';
+import ThemeToggle from '../ui/ThemeToggle';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -17,8 +17,8 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm' 
-        : 'bg-transparent'
+        ? 'bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-sm border-b dark:border-slate-100/10' 
+        : 'bg-transparent border-b dark:border-slate-100/10'
     }`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a 
@@ -61,7 +61,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-slate-900 border-t dark:border-slate-800">
+        <div className="md:hidden bg-white dark:bg-black border-t dark:border-slate-800">
           <div className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
